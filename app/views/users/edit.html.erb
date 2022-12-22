@@ -1,0 +1,33 @@
+
+
+  <% if @user.errors.any? %>
+  <%= @user.errors.count %>errors prohibited this book from being saved:
+    <ul class="error-list">
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+    <% end %>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <h2>User Info</h2>
+    <%= form_with model: @user do |f| %>
+      <p><label for="inputName">Name</label></p>
+      <p><%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name"%></p>
+
+      <p><label for="inputImage">ProfileImage</label></p>
+      <p><%= f.file_field :profile_image, placeholder: "image", accept: "image/*" %></p>
+      <p><%= f.text_area :introduction,placeholder:"Hi!"%></p>
+      <p><%= f.submit "Update User", class:"btn btn-secondary" %></p>
+      <% end%>
+
+
+
+
+    </div>
+  </div>
+</div>
