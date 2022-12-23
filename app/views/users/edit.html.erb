@@ -1,5 +1,4 @@
 
-
   <% if @user.errors.any? %>
   <%= @user.errors.count %>errors prohibited this book from being saved:
     <ul class="error-list">
@@ -8,8 +7,6 @@
       <% end %>
     </ul>
     <% end %>
-
-
 
 <div class="container">
   <div class="row">
@@ -24,10 +21,6 @@
       <p><%= f.text_area :introduction,placeholder:"Hi!"%></p>
       <p><%= f.submit "Update User", class:"btn btn-secondary" %></p>
       <% end%>
-
-
-
-
     </div>
   </div>
 </div>

@@ -1,28 +1,21 @@
   <% if @book.errors.any? %>
-  <div class="error">
   <%= @book.errors.count %>errors prohibited this book from being saved:
     <ul class="error-list">
       <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
       <% end %>
     </ul>
-    </div>
 <% end %>
-
 
 
 <div class="container px-5 px-sm-0">
   <div class="row">
-        <div class="col-md-3">
-
+      <div class="col-md-3">
         
-        
-        <%= render 'users/profile', user: current_user %>
+      <%= render 'users/profile', user: current_user %>
+      <%= render 'new_book', book: @book %>
 
-         <%= render 'new_book', book: @book %>
-
-        </div>
-
+      </div>
 
       <div class="col-md-8 offset-md-1">
         <h2>Books</h2>
@@ -32,18 +25,19 @@
               <th>title</th>
               <th>opinion</th>
             </tr>
-            
           <% @books.each do |book| %>
-
           <tr>
-            <td><%= link_to user_path(book.user) do %>
-            
-	            <%= image_tag book.user.get_profile_image(100,100) %></td>
- 	        <% end %></td>
+            <td>
+              <%= link_to user_path(book.user) do %>
+	            <%= image_tag book.user.get_profile_image(100,100) %>
+ 	        <% end %>
+ 	          </td>
 
-	           <td><%= link_to book_path(book.id) do %>
-	           <%= book.title %>
-            <% end %></td>
+	           <td>
+	             <%= link_to book_path(book.id) do %>
+	               <%= book.title %>
+                <% end %>
+              </td>
           
 	          <td><%= book.body%></td>
 
@@ -51,6 +45,5 @@
           </tr>
         </table>
       </div>
-
-</div>
+  </div>
 </div>

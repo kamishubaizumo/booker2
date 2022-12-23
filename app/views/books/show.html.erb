@@ -1,22 +1,12 @@
-<%= flash[:notice] %>
-
-
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
 
-
-
-
-
-    <%= render 'users/profile', user: @book.user %>
-
-    <%= render 'new_book', book: @books %>
-        
-    
+      <%= render 'users/profile', user: @book.user %>
+      <%= render 'new_book', book: @books %>
     </div>
     
-      <div lass="col-md-8 offset-md-1">
+      <div class="col-md-8 offset-md-1">
         <h2>Book detail</h2>
         
         <table class="table">
